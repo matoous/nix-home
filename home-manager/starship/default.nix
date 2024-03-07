@@ -21,7 +21,7 @@
         "$battery"
         "$status"
         "$character"
-      ];      
+      ];
 
       git_branch = {
         format = "\\[[$branch]($style)\\]";
