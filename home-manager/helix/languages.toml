@@ -1,0 +1,57 @@
+[language-server.astro]
+command = "astro-ls"
+args = ["--stdio"]
+config = {typescript = {tsdk = "/Users/matousdzivjak/.bun/install/global/node_modules/typescript/lib"}, environment = "node"}
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+# [[language]]
+# name = "astro"
+# scope = "source.astro"
+# file-types = ["astro"]
+# auto-format = true
+# language-server = { command = "astro-ls", args = ["--stdio"]}
+# config = {typescript = {tsdk = "/Users/user/.bun/install/global/node_modules/typescript/lib"}, environment = "node"}
+
+[[language]]
+name = "astro"
+scope = "source.astro"
+language-servers = [ "astro" ]
+auto-format = true
+
+[[language]]
+name = "go"
+auto-format = true
+# formatter = { command = "goimports" }
+language-servers = ["gopls" ] # , "snippets-ls"]
+
+[language-server.gopls]
+command = "gopls"
+
+# [language-server.snippets-ls]
+# args = ["-config", "/Users/matousdzivjak/.config/helix/go-snippets.json"]
+# command="snippets-ls"
+
+[language-server.sql]
+command = "sql-language-server"
+args = ["up", "--method", "stdio"]
+
+[[language]]
+name = "sql"
+language-servers = [ "sql" ]
+
+[[language]]
+name = "jsonnet"
+auto-format = true
+
+[[language]]
+name = "typst"
+formatter = { command = "typstfmt", args = ["--output", "-"] }
+auto-format = true
+
+
+[[language]]
+name = "lua"
+auto-format = true
+formatter = { command = "stylua" }

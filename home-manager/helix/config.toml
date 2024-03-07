@@ -1,0 +1,45 @@
+theme = "modus_vivendi"
+
+[editor.soft-wrap]
+enable = true
+
+[editor]
+bufferline = "multiple"
+idle-timeout = 300
+completion-trigger-len = 1
+cursorline = true
+color-modes = true
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+
+[editor.lsp]
+display-messages = true
+# display-inlay-hints = true
+# colors = true
+
+[editor.statusline]
+left = ["mode", "spinner", "version-control", "file-name"]
+center = []
+right = ["diagnostics", "selections", "position", "file-encoding", "file-type"]
+
+[editor.smart-tab]
+enable = true
+
+[keys.normal]
+"K" = "hover"
+"A-k" = "keep_selections"
+"$" = "extend_to_line_end"
+"^" = "extend_to_line_start"
+
+[keys.insert]
+A-h = "move_char_left"
+A-j = "move_line_down"
+A-k = "move_line_up"
+A-l = "move_char_right"
+A-o = "open_below"
+A-O = "open_above"
+
+# [commands]
+# "gh-open" = [":sh gh open"]
