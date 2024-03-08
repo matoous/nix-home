@@ -8,8 +8,18 @@ Clone and:
 ln -s ~/code/github.com/matoous/nix-home ~/.config/home-manager
 ```
 
+Home manager can't set default user shell, so even with this one still needs to manually add fish to `/etc/shells` and than update the current users default shell using ` chsh -s /path/to/fish`.
+
 - [home-manager](https://github.com/nix-community/home-manager)
   - [Home manager options](https://mipmip.github.io/home-manager-option-search/)
+
+### SSH
+
+Add key to keychain on MacOS:
+
+```sh
+ssh-add --apple-use-keychain ~/.ssh/[your-private-key]
+```
 
 ## Reading
 

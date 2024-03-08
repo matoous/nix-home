@@ -3,6 +3,8 @@
 , lib
 , config
 , pkgs
+, unstable
+, bleeding-edge
 , ...
 }:
 let
@@ -83,6 +85,9 @@ in
     nix-index = {
       enable = true;
       enableFishIntegration = true;
+    };
+    ssh = {
+      enable = true;
     };
   };
 
@@ -174,9 +179,14 @@ in
     # dzx.cz
     pkgs.hugo
 
+    # Linux virtual machines
+    pkgs.lima-bin
+
+    # Container runtime on MacOS
+    pkgs.colima
+
     pkgs.gh
     pkgs.imagemagick
-    pkgs.lima-bin
     pkgs.pgcli
     pkgs.pinentry_mac
     pkgs.yubikey-manager
@@ -243,7 +253,7 @@ in
     # Apps
     pkgs.spotify
     pkgs._1password
-    pkgs._1password-gui
+    # pkgs._1password-gui # TODO: for some reason doesn't work, old version?
 
     # Flash OS images to SD cards
     # pkgs.etcher # TODO: not available on MacOS

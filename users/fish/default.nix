@@ -185,8 +185,6 @@
 
       set -gx LDFLAGS "-L/opt/homebrew/opt/llvm/lib, -L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"
       set -gx CPPFLAGS "-I/opt/homebrew/opt/llvm/include"
-
-      eval "$(fig init fish post)"
     '';
   };
 }
