@@ -179,11 +179,16 @@ in
     # dzx.cz
     pkgs.hugo
 
-    # Linux virtual machines
-    pkgs.lima-bin
-
-    # Container runtime on MacOS
-    pkgs.colima
+    # Docker
+    pkgs.lima-bin # Linux virtual machines
+    pkgs.colima # Container runtime on MacOS
+    pkgs.docker-buildx
+    pkgs.docker-compose
+    pkgs.dive
+    # pkgs.docker
+    # pkgs.docker-compose
+    # pkgs.docker-machine-kvm2
+    # pkgs.docker-machine
 
     pkgs.gh
     pkgs.imagemagick
@@ -201,10 +206,6 @@ in
     pkgs.conftest
     pkgs.kubernetes-helm
 
-    # Docker
-    pkgs.docker-buildx
-    pkgs.docker-compose
-    pkgs.dive
 
     # AWS/Kubernetes-related packages
     pkgs.aws-vault # A vault for securely storing and accessing AWS credentials in development environments
@@ -217,24 +218,18 @@ in
     pkgs.kubie
     pkgs.kustomize
 
-    # TODO: find how to install some docker compatible CLI interface for building images which is the same as macOS.
-    # pkgs.podman
-    # pkgs.docker
-    # pkgs.docker-compose
-    # pkgs.docker-machine-kvm2
-    # pkgs.docker-machine
-    # pkgs.nerdctl
-
     # Languages
     pkgs.nodejs
     pkgs.python3
-    pkgs.rustup
-    pkgs.rustc
     pkgs.deno
     pkgs.elixir
+    pkgs.gleam
     # pkgs.go
 
-    # pkgs.cargo # TODO: enable, currently conflicts
+    # pkgs.cargo
+    # pkgs.rustc
+    # pkgs.rustfmt
+    # pkgs.cargo-binutils
 
     # Go for embed and wasm
     pkgs.tinygo
