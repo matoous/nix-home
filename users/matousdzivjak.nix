@@ -152,7 +152,6 @@ in
     pkgs.loc
     pkgs.tanka
     pkgs.yarn
-    pkgs.yq
 
     # Typos! Everyone makes them
     # https://github.com/crate-ci/typos

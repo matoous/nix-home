@@ -3,6 +3,12 @@
 {
   programs.fish = {
     enable = true;
+    plugins = [
+      {
+        name = "fzf-fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
+    ];
     functions = {
       update = {
         description = "Update binaries";
@@ -171,7 +177,7 @@
       set -gx HOMEBREW_CASK_OPTS --require-sha
 
       # FZF
-      set --export FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
+      set --export FZF_DEFAULT_OPTS '--cycle --layout=reverse --preview-window=wrap --marker="*" --bind=tab:down,btab:up'
 
       # GPG
       set -gx GPG_TTY $(tty)
