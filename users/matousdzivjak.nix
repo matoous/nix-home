@@ -178,6 +178,18 @@ in
     # dzx.cz
     pkgs.hugo
 
+    # Working on embed
+    pkgs.minicom # Modem control and terminal emulation program
+
+    # Playing with hubris
+    pkgs.openocd
+
+    # Playing with zephyr
+    pkgs.ninja # Small build system with a focus on speed
+    pkgs.gperf
+    pkgs.ccache
+    pkgs.dtc # Device Tree Compiler
+
     # Docker
     pkgs.lima-bin # Linux virtual machines
     pkgs.colima # Container runtime on MacOS
@@ -218,11 +230,7 @@ in
     pkgs.kustomize
 
     # Languages
-    pkgs.nodejs
     pkgs.python3
-    pkgs.deno
-    pkgs.elixir
-    pkgs.gleam
     # pkgs.go
 
     # pkgs.cargo
@@ -249,11 +257,15 @@ in
     pkgs._1password
     # pkgs._1password-gui # TODO: for some reason doesn't work, old version?
 
+
     # Flash OS images to SD cards
     # pkgs.etcher # TODO: not available on MacOS
 
     # Media player for MacOS
     pkgs.iina
+
+    # Nice images of code
+    # pkgs.charm-freeze # NOTE: not yet available, see https://github.com/NixOS/nixpkgs/pull/299189
 
     # Work work work
     pkgs.slack

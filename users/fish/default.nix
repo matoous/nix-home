@@ -145,7 +145,6 @@
       "g" = "git";
       "grep" = "ack";
       "ip" = "dig +short myip.opendns.com @resolver1.opendns.com";
-      "jsonnet" = "jrsonnet";
       "k" = "kubectl";
       "ll" = "eza --long --sort=age --git --time=modified --time-style=iso";
       "ls" = "eza --all --group-directories-first --level=2";
