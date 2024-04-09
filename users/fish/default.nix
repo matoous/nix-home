@@ -22,6 +22,15 @@
           '';
       };
 
+      cleanup = {
+        description = "Clean cache of various tools";
+        body =
+        ''
+          nix-store --gc
+          go clean --modcache
+        '';
+      };
+
       falias = {
         description = "Find aliases";
         body =

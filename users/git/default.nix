@@ -37,7 +37,7 @@
         autocrlf = "input";
         whitespace = "trailing-space,space-before-tab";
         excludesfile = "~/.config/git/.gitignore_global";
-        fsmonitor = true;
+        fsmonitor = false; # true;
       };
       apply = {
         whitespace = "fix";

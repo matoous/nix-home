@@ -96,98 +96,87 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.wezterm
     pkgs.moreutils
 
-    # Fast flake downloads
-    pkgs.cachix
-
-    # To flex with the setup
-    pkgs.neofetch
-
-    # HTTP, httpie is the main driver
+    pkgs.zstd
+    pkgs.lz4
+    pkgs.zx
+    pkgs.cachix # Fast flake downloads
+    pkgs.neofetch # To flex with the setup
     pkgs.httpie
-    # curl and wget for scipts and tools that use them
     pkgs.wget
     pkgs.curl
-
-    # curl, but for gRPC
-    pkgs.grpcurl
-
-    # Alternative to find
-    pkgs.fd
-
-    # Alternative to cat, file pager
-    pkgs.bat
-
-    # Alternative to ls, used to be exa but that became unmaintained
-    pkgs.eza
-
-    # Alternative to dig, for DNS
-    pkgs.dog
-
-    # JSON mangling in terminal
-    pkgs.jq
-
-    # Workspace search and replace
-    pkgs.fastmod
-    # Another search and replace tool
-    pkgs.amber
-
-    # Cloc with extras, count lines and more
-    pkgs.scc
-
-    # ast-grep, AST tree based search/replace tool
-    # https://github.com/ast-grep/ast-grep
-    pkgs.ast-grep
-
-    # Session recording
-    pkgs.asciinema
-
-    # For when I make a mistake
-    # pkgs.trashy # TODO: doesn't work on m1
-
-    # Shell tools
+    pkgs.grpcurl # curl, but for gRPC
+    pkgs.fd # Alternative to find
+    pkgs.bat # Alternative to cat, file pager
+    pkgs.eza # Alternative to ls, used to be exa but that became unmaintained
+    pkgs.dog # Alternative to dig, for DNS
+    pkgs.jq # JSON mangling in terminal
     pkgs.ack
     pkgs.difftastic
-    pkgs.loc
-    pkgs.tanka
-    pkgs.yarn
-
-    # Typos! Everyone makes them
-    # https://github.com/crate-ci/typos
-    pkgs.typos
-
-    # Colorful top
-    pkgs.btop
-
-    # Get wifi password from command line
-    pkgs.wifi-password
-
-    # Workspace search
-    pkgs.ripgrep
-
-    # File info
-    pkgs.file
-
-    # Run github action locally
-    pkgs.act
-
-    # Fly.io, used for wiki
-    pkgs.flyctl
-
-    # dzx.cz
+    pkgs.typos # Typos! Everyone makes them (https://github.com/crate-ci/typos)
+    pkgs.btop # Colorful top
+    pkgs.wifi-password # Get wifi password from command line
+    pkgs.file # File info
+    pkgs.imagemagick # Image mangling
     pkgs.hugo
 
-    # Working on embed
+    # Search
+    pkgs.fastmod # Workspace search and replace
+    pkgs.amber # Another search and replace tool
+    pkgs.ast-grep # ast-grep, AST tree based search/replace tool (https://github.com/ast-grep/ast-grep)
+    pkgs.ripgrep # Workspace search
+
+    pkgs.loc
+    pkgs.scc # Cloc with extras, count lines and more
+    pkgs.act # Run github action locally
+    pkgs.gh
+    pkgs.pgcli
+    pkgs.pinentry_mac
+    pkgs.yubikey-manager
+    pkgs.git-absorb # auto-squash on steroids (https://github.com/tummychow/git-absorb)
+    pkgs.asciinema # Session recording
+    # pkgs.charm-freeze # Nice images of code # NOTE: not yet available, see https://github.com/NixOS/nixpkgs/pull/299189   
+    pkgs.flyctl # Used for Wiki
+
+    # Languages
+    pkgs.python3
+    pkgs.nodejs_20
+    pkgs.yarn
+    pkgs.tanka
+    # pkgs.go
+    # pkgs.cargo
+    # pkgs.rustc
+    # pkgs.rustfmt
+    # pkgs.cargo-binutils
+    pkgs.tinygo # Go for embed and wasm
+
+    # Language servers
+    pkgs.nil
+    pkgs.yaml-language-server
+
+    # Fonts
+    pkgs.jetbrains-mono
+
+    # Apps
+    pkgs.spotify
+    pkgs._1password
+    pkgs.iina # Media player for MacOS
+    pkgs.slack
+
+    # pkgs._1password-gui # TODO: for some reason doesn't work, old version?
+    # pkgs.etcher # Flash OS images to SD cards # TODO: not available on MacOS
+    # pkgs.anki # TODO: currently broken
+    # pkgs.trashy # For when I make a mistake # TODO: doesn't work on m1
+
+    # Embed dev
     pkgs.minicom # Modem control and terminal emulation program
-
-    # Playing with hubris
-    pkgs.openocd
-
-    # Playing with zephyr
+    pkgs.openocd # Playing with hubris
     pkgs.ninja # Small build system with a focus on speed
     pkgs.gperf
-    pkgs.ccache
+    # pkgs.cmake
+    # pkgs.ccache
     pkgs.dtc # Device Tree Compiler
 
     # Docker
@@ -201,24 +190,11 @@ in
     # pkgs.docker-machine-kvm2
     # pkgs.docker-machine
 
-    pkgs.gh
-    pkgs.imagemagick
-    pkgs.pgcli
-    pkgs.pinentry_mac
-    pkgs.yubikey-manager
-
-    # auto-squash on steroids
-    # https://github.com/tummychow/git-absorb
-    pkgs.git-absorb
-
     # Work
     pkgs.argocd
     pkgs.aws-iam-authenticator
     pkgs.conftest
     pkgs.kubernetes-helm
-
-
-    # AWS/Kubernetes-related packages
     pkgs.aws-vault # A vault for securely storing and accessing AWS credentials in development environments
     pkgs.kind
     pkgs.kubectl
@@ -228,47 +204,6 @@ in
     pkgs.kubectx
     pkgs.kubie
     pkgs.kustomize
-
-    # Languages
-    pkgs.python3
-    # pkgs.go
-
-    # pkgs.cargo
-    # pkgs.rustc
-    # pkgs.rustfmt
-    # pkgs.cargo-binutils
-
-    # Go for embed and wasm
-    pkgs.tinygo
-
-    # Language servers
-    pkgs.nil
-
-    # Compression
-    pkgs.zstd
-    pkgs.lz4
-    pkgs.zx
-
-    # Fonts
-    pkgs.jetbrains-mono
-
-    # Apps
-    pkgs.spotify
-    pkgs._1password
-    # pkgs._1password-gui # TODO: for some reason doesn't work, old version?
-
-
-    # Flash OS images to SD cards
-    # pkgs.etcher # TODO: not available on MacOS
-
-    # Media player for MacOS
-    pkgs.iina
-
-    # Nice images of code
-    # pkgs.charm-freeze # NOTE: not yet available, see https://github.com/NixOS/nixpkgs/pull/299189
-
-    # Work work work
-    pkgs.slack
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -4,11 +4,11 @@
 
 Clone and:
 
-```
+```sh
 ln -s ~/code/github.com/matoous/nix-home ~/.config/home-manager
 ```
 
-Home manager can't set default user shell, so even with this one still needs to manually add fish to `/etc/shells` and than update the current users default shell using ` chsh -s /path/to/fish`.
+Home manager can't set default user shell. After install one needs to manually add fish shell to `echo '/Users/matousdzivjak/.nix-profile/bin/fish' >> /etc/shells` and then update the current users default shell using `chsh -s /Users/matousdzivjak/.nix-profile/bin/fish`.
 
 - [home-manager](https://github.com/nix-community/home-manager)
   - [Home manager options](https://mipmip.github.io/home-manager-option-search/)
